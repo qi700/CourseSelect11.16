@@ -37,7 +37,7 @@
 <img src="/lib/credit_screenshot.png" width="700">
 
 
-<img src="/lib/filte_screenshot.png" width="700">
+<img src="/lib/search_screenshot.png" width="700">
 
 ## 说明
 
