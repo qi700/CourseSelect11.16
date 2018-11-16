@@ -5,18 +5,15 @@
 
 这个样本系统是基于国科大研究生课程 (高级软件工程) 开发的项目,目的是帮助入门者学习RoR (Ruby on Rails),
 
-适合新学者的入手的第一个项目 ([演示Demo戳这里](https://courseselect.herokuapp.com/ ))，入门者可以在这个样本系统上增加更多的功能:
-
+改进之后的系统 (https://course-7-select.herokuapp.com)，
+在那个样本系统上增加的功能:
 * 处理选课冲突、控制选课人数
 * 统计选课学分，学位课等
 * 增加选课的开放、关闭功能
-* 自定义管理员后台
-* 基于OAuth的授权登陆
-* Excel格式的数据导入
-* 绑定用户邮箱（实现注册激活，忘记密码等）
+* 添加课程公告
 * 站内查找检索 （课程按分类查找，过滤等）
 
-### 目前功能：
+### 已有功能：
 
 * 多角色登陆（学生，老师，管理员）
 * 学生动态选课，退课
@@ -24,17 +21,20 @@
 * 老师对课程下的学生添加、修改成绩
 * 权限控制：老师和学生只能看到自己相关课程信息
 
-**如果觉得好，给项目点颗星吧～**
 
 ### 截图
 
-<img src="/lib/screenshot1.png" width="700">  
+<img src="/lib/screenshot1.png" width="700">
 
 <img src="/lib/screenshot2.png" width="700">
 
-<img src="/lib/screenshot3.png" width="700">   
+<img src="/lib/screenshot3.png" width="700">
 
 <img src="/lib/screenshot4.png" width="700">
+
+<img src="/lib/table_screenshot.png" width="700">
+<img src="/lib/credit_screenshot.png" width="700">
+<img src="/lib/filte_screenshot.png" width="700">
 
 ## 说明
 
@@ -59,7 +59,7 @@ $ cd CourseSelect
 $ bundle install
 $ rake db:migrate
 $ rake db:seed
-$ rails s 
+$ rails s
 ```
 
 在浏览器中输入`localhost:3000`访问主页
@@ -194,9 +194,9 @@ end
 
 3. 运行`rake test`,成功后会根目录的coverage下生成一个index.html文件，用浏览器打开能看到结果如下：
 
-  <img src="/lib/screenshot5.png" width="700">  
+  <img src="/lib/screenshot5.png" width="700">
 
-  <img src="/lib/screenshot6.png" width="700">  
+  <img src="/lib/screenshot6.png" width="700">
 
 
 ## Travis CI 线上自动测试

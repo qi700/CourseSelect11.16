@@ -25,7 +25,6 @@ Rails.application.routes.draw do
       get :close
       get :filter
       get :credit
-      get :inform
       get :schedule
     end
     collection do

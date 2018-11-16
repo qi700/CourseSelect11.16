@@ -9,6 +9,8 @@ class CoursesController < ApplicationController
   def new
     @course=Course.new
   end
+  def show
+  end
 
   def create
     @course = Course.new(course_params)
@@ -28,6 +30,7 @@ class CoursesController < ApplicationController
   def update
     @course = Course.find_by_id(params[:id])
     if @course.update_attributes(course_params)
+      @course.save
       flash={:info => "更新成功"}
     else
       flash={:warning => "更新失败"}
@@ -38,12 +41,14 @@ class CoursesController < ApplicationController
   def open
     @course=Course.find_by_id(params[:id])
     @course.update_attributes(open: true)
+    @course.save
     redirect_to courses_path, flash: {:success => "已经成功开启该课程:#{ @course.name}"}
   end
 
   def close
     @course=Course.find_by_id(params[:id])
     @course.update_attributes(open: false)
+    @course.save
     redirect_to courses_path, flash: {:success => "已经成功关闭该课程:#{ @course.name}"}
   end
 
@@ -51,6 +56,7 @@ class CoursesController < ApplicationController
     @course=Course.find_by_id(params[:id])
     current_user.teaching_courses.delete(@course)
     @course.destroy
+    @course.save
     flash={:success => "成功删除课程: #{@course.name}"}
     redirect_to courses_path, flash: flash
   end
@@ -115,9 +121,6 @@ class CoursesController < ApplicationController
     redirect_to courses_path, flash: flash
   end
 
-  def inform
-
-  end
 
   def schedule
      @courses=current_user.courses
