@@ -6,41 +6,6 @@
     </div>
 
 
-<form action="course\filter">
-    <div class="form-group" style="float:left;margin:5px 10px 20px 40px">
-<label for="name">学时/学分</label>
-<select name="select_credit" class="form-control" , style="width:150px">
-      <option selected="selectd"></option>
-      <option>60/3.0</option>
-      <option>40/2.0</option>
-</select>
-</div>
-
-<div class="form-group" style="float:left;margin:5px 10px 20px 40px">
-<label for="name">课程属性</label>
-<select name="select_course_type" class="form-control" , style="width:150px">
-
-      <option selected="selectd"></option>
-      <option>专业核心课</option>
-      <option>专业普及课</option>
-</select>
-</div>
-
-
-<div class="form-group" style="float:left;margin:5px 10px 20px 40px">
-<label for="name">考试方式</label>
-<select name="select_exam_type" class="form-control" , style="width:150px">
-      <option selected="selectd"></option>
-      <option>课堂开卷</option>
-      <option>闭卷考试</option>
-</select>
-</div>
-<div class="form-group" style="float:left;margin:25px 10px 20px 30px;width:150px">
-<input type="submit">
-</div>
-</form>
-
-
 
 
     <div class="col-sm-10">
@@ -69,9 +34,9 @@
             </tr>
             </thead>
             <tbody>
-
-            <% @course.each do |course| %>
-                <tr>
+            </tbody>
+          <% @course.each do |course|%>
+              <tr>
 
                   <td><%= course.course_code %></td>
                   <td><%= course.name %></td>
@@ -88,10 +53,10 @@
                   <td><%= link_to "加入课程", select_course_path(course), class: 'btn-sm btn-info' %></td>
 
                 </tr>
-            <% end %>
-            </tbody>
+
+              <%end%>
           </table>
-          <%= will_paginate @courses %>
+
         </div>
       </div>
     </div>

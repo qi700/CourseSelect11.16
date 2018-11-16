@@ -1,5 +1,85 @@
 <div class="panel-group" id="accordion">
 
+
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <% if teacher_logged_in? %>
+            <a data-toggle="collapse" data-parent="#accordion" href="#UserCollapse"><span class="glyphicon glyphicon-user"></span>
+              个人信息管理</a>
+        <% end %>
+
+        <% if student_logged_in? %>
+            <a data-toggle="collapse" data-parent="#accordion" href="#UserCollapse"><span class="glyphicon glyphicon-user"></span>
+              个人信息管理</a>
+        <% end %>
+      </h4>
+    </div>
+
+    <div id="UserCollapse" class="panel-collapse collapse <%= "in" if ["users"].include?(params[:controller]) %>">
+      <div class="list-group">
+
+        <% if teacher_logged_in? %>
+            <li class="list-group-item">
+              <%= link_to edit_user_path(current_user) do%>
+                个人信息管理<span class"glyphicon glyphicon-user"></span>
+                <%end%>
+            </li>
+          <% end %>
+
+        <% if student_logged_in? %>
+            <li class="list-group-item">
+              <%= link_to edit_user_path(current_user) do%>
+                个人信息管理<span class"glyphicon glyphicon-user"></span>
+                <%end%>
+            </li>
+        <% end %>
+  </div>
+</div>
+  </div>
+
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <% if teacher_logged_in? %>
+            <a data-toggle="collapse" data-parent="#accordion" href="#InformCollapse"><span class="glyphicon glyphicon-user"></span>
+              课程公告管理</a>
+        <% end %>
+
+        <% if student_logged_in? %>
+            <a data-toggle="collapse" data-parent="#accordion" href="#InformCollapse"><span class="glyphicon glyphicon-user"></span>
+              课程公告管理</a>
+        <% end %>
+      </h4>
+    </div>
+
+    <div id="InformCollapse" class="panel-collapse collapse <%= "in" if ["users"].include?(params[:controller]) %>">
+      <div class="list-group">
+
+        <% if teacher_logged_in? %>
+            <li class="list-group-item">
+              <%= link_to informs_path do%>
+                课程公告管理<span class"glyphicon glyphicon-user"></span>
+                <%end%>
+            </li>
+            <li class="list-group-item">
+              <%= link_to new_inform_path do%>
+                新增课程公告<span class"glyphicon glyphicon-user"></span>
+                <%end%>
+            </li>
+          <% end %>
+
+        <% if student_logged_in? %>
+            <li class="list-group-item">
+              <%= link_to informs_path(current_user.courses) do%>
+                课程公告查看<span class"glyphicon glyphicon-user"></span>
+                <%end%>
+            </li>
+        <% end %>
+  </div>
+</div>
+  </div>
+
   <div class="panel panel-default">
     <div class="panel-heading">
       <h4 class="panel-title">
@@ -41,12 +121,29 @@
                   <span class="label label-info pull-right"><%= (Course.where(:open => true)-current_user.courses).count %></span>
               <% end %>
             </li>
+
             <li class="list-group-item">
               <%= link_to courses_path do %>
                   <span class="glyphicon glyphicon-chevron-right"></span> 已选课程
                   <span class="label label-info pull-right"><%= current_user.courses.count %></span>
               <% end %>
             </li>
+
+            <li class="list-group-item">
+              <%= link_to schedule_course_path(current_user.courses) do %>
+                  <span class="glyphicon glyphicon-chevron-right"></span> 查看课表
+                  <span class="label label-info pull-right"><%= current_user.courses.count %></span>
+              <% end %>
+            </li>
+
+            <li class="list-group-item">
+              <%= link_to credit_course_path(current_user.courses) do %>
+                  <span class="glyphicon glyphicon-chevron-right"></span> 选课学分提醒
+                  <span class="label label-info pull-right"><%= current_user.courses.count %></span>
+              <% end %>
+            </li>
+
+
         <% end %>
 
       </ul>

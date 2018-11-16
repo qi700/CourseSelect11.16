@@ -128,67 +128,82 @@ class CoursesController < ApplicationController
      @course_Fri = Array.new(5)
      @courses.each do |course|
        if course.course_time == "周一(1-2)"
-         @course_Mon[0] = course.name+"\n"+course.course_week
+         @course_Mon[0] = course.name
        end
        if course.course_time == "周一(3-4)"
-         @course_Mon[1] = course.name+"\n"+course.course_week
+         @course_Mon[1] = course.name
        end
-       if course.course_time == "周一(5-7)"
-         @course_Mon[2] = course.name+"\n"+course.course_week
+       if course.course_time == "周一(5-6)"
+         @course_Mon[2] = course.name
+       end
+       if course.course_time == "周一(7-8)"
+         @course_Mon[3] = course.name
        end
        if course.course_time == "周一(9-11)"
-         @course_Mon[4] = course.name+"\n"+course.course_week
+         @course_Mon[4] = course.name
        end
        if course.course_time == "周二(1-2)"
-         @course_Tus[0] = course.name+"\n"+course.course_week
+         @course_Tus[0] = course.name
        end
        if course.course_time == "周二(3-4)"
-         @course_Tus[1] = course.name+"\n"+course.course_week
+         @course_Tus[1] = course.name
        end
-       if course.course_time == "周二(5-7)"
-         @course_Tus[2] = course.name+"\n"+course.course_week
+       if course.course_time == "周二(5-6)"
+         @course_Tus[2] = course.name
+       end
+       if course.course_time == "周二(7-8)"
+         @course_Tus[3] = course.name
        end
        if course.course_time == "周二(9-11)"
-         @course_Tus[4] = course.name+"\n"+course.course_week
+         @course_Tus[4] = course.name
        end
 
        if course.course_time == "周三(1-2)"
-         @course_Wed[0] = course.name+"\n"+course.course_week
+         @course_Wed[0] = course.name
        end
        if course.course_time == "周三(3-4)"
-         @course_Wed[1] = course.name+"\n"+course.course_week
+         @course_Wed[1] = course.name
        end
-       if course.course_time == "周三(5-7)"
-         @course_Wed[2] = course.name+"\n"+course.course_week
+       if course.course_time == "周三(5-6)"
+         @course_Wed[2] = course.name
+       end
+       if course.course_time == "周三(7-8)"
+         @course_Wed[3] = course.name
        end
        if course.course_time == "周三(9-11)"
          @course_Wed[4] = course.name+"\n"+course.course_week
        end
 
        if course.course_time == "周四(1-2)"
-         @course_Thu[0] = course.name+"\n"+course.course_week
+         @course_Thu[0] = course.name
        end
        if course.course_time == "周四(3-4)"
-         @course_Thu[1] = course.name+"\n"+course.course_week
+         @course_Thu[1] = course.name
        end
-       if course.course_time == "周四(5-7)"
-         @course_Thu[2] = course.name+"\n"+course.course_week
+       if course.course_time == "周四(5-6)"
+         @course_Thu[2] = course.name
+       end
+       if course.course_time == "周四(7-8)"
+         @course_Thu[3] = course.name
        end
        if course.course_time == "周四(9-11)"
-         @course_Thu[4] = course.name+"\n"+course.course_week
+         @course_Thu[4] = course.name
        end
 
        if course.course_time == "周五(1-2)"
-         @course_Fri[0] = course.name+"\n"+course.course_week
+         @course_Fri[0] = course.name
        end
        if course.course_time == "周五(3-4)"
-         @course_Fri[1] = course.name+"\n"+course.course_week
+         @course_Fri[1] = course.name
        end
-       if course.course_time == "周五(5-7)"
-         @course_Fri[2] = course.name+"\n"+course.course_week
+       if course.course_time == "周五(5-6)"
+         @course_Fri[2] = course.name
+       end
+       if course.course_time == "周五(7-8)"
+         @course_Fri[3] = course.name
        end
        if course.course_time == "周五(9-11)"
-         @course_Fri[4] = course.name+"\n"+course.course_week
+         @course_Fri[4] = course.name
        end
      end
 

@@ -23,6 +23,10 @@ Rails.application.routes.draw do
       get :quit
       get :open
       get :close
+      get :filter
+      get :credit
+      get :inform
+      get :schedule
     end
     collection do
       get :list
@@ -31,6 +35,7 @@ Rails.application.routes.draw do
 
   resources :grades, only: [:index, :update]
   resources :users
+  resources :informs
 
   get 'sessions/login' => 'sessions#new'
   post 'sessions/login' => 'sessions#create'

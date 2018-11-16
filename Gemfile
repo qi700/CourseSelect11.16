@@ -1,4 +1,4 @@
-source 'https://gems.ruby-china.org'
+source 'https://gems.ruby-china.com'
 
 gem 'bootstrap-sass', '~> 3.3.7'
 # Use ActiveModel has_secure_password
@@ -19,7 +19,7 @@ gem 'axlsx_rails'
 gem 'rails-i18n'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.2.5.2'
+gem 'rails', '4.2.8'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
