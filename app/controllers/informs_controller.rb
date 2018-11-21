@@ -1,5 +1,8 @@
 class InformsController < ApplicationController
 
+  def new
+    @inform=Inform.new
+  end
 
   def index
     @inform =  Inform.all
@@ -43,8 +46,6 @@ class InformsController < ApplicationController
   end
 
 
-  def new
-  end
 
 
 private
