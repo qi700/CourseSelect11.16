@@ -6,12 +6,6 @@
 这个样本系统是基于国科大研究生课程 (高级软件工程) 开发的项目,目的是帮助入门者学习RoR (Ruby on Rails),
 
 改进之后的系统 (https://course-7-select.herokuapp.com)，
-在那个样本系统上增加的功能:
-* 处理选课冲突、控制选课人数
-* 统计选课学分，学位课等
-* 增加选课的开放、关闭功能
-* 添加课程公告
-* 站内查找检索 （课程按分类查找，过滤等）
 
 ### 已有功能：
 
@@ -19,25 +13,48 @@
 * 学生动态选课，退课
 * 老师动态增加，删除课程
 * 老师对课程下的学生添加、修改成绩
+* 老师对课程的开放和关闭功能
+* 老师对课程公告的添加、修改
 * 权限控制：老师和学生只能看到自己相关课程信息
+* 处理选课冲突、控制选课人数
+* 统计选课学分，学位课等
+* 查看课程公告
+* 站内查找检索 （课程按分类查找，过滤等）
+* 查看课表
 
 
 ### 截图
 
-<img src="/lib/screenshot1.png" width="700">
+<img src="/lib/first.png" width="700">
 
-<img src="/lib/screenshot2.png" width="700">
+<img src="/lib/second.png" width="700">
 
-<img src="/lib/screenshot3.png" width="700">
+## 管理员
+<img src="/lib/third.png" width="700">
 
-<img src="/lib/screenshot4.png" width="700">
+## 学生
+<img src="/lib/listcourse.png" width="700">
 
-<img src="/lib/table_screenshot.png" width="700">
-
-<img src="/lib/credit_screenshot.png" width="700">
+<img src="/lib/filtercourse.png" width="700">
 
 
-<img src="/lib/search_screenshot.png" width="700">
+<img src="/lib/selectcourse.png" width="700">
+
+<img src="/lib/coursetable.png" width="700">
+
+<img src="/lib/credit.png" width="700">
+
+<img src="/lib/mygrade.png" width="700">
+
+<img src="/lib/credit.png" width="700">
+
+<img src="/lib/inform.png" width="700">
+
+## 老师
+
+<img src="/lib/informadd.png" width="700">
+
+<img src="/lib/grade.png" width="700">
 
 ## 说明
 
