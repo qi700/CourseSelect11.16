@@ -65,7 +65,7 @@ class CoursesController < ApplicationController
 
   def list
     #-------QiaoCode--------
-    @courses = Course.where(:open=>true).paginate(page: params[:page], per_page: 5)
+    @courses = Course.where(:open=>true).paginate(page: params[:page], per_page: 10)
     @course = @courses-current_user.courses
     tmp=[]
     @course.each do |course|
@@ -204,7 +204,7 @@ class CoursesController < ApplicationController
     @Select_course_type=params[:select_course_type]
     @Select_credit=params[:select_credit]
 
-    @courses = Course.where(:open=>true).paginate(page: params[:page], per_page: 4)
+    @courses = Course.where(:open=>true)
     @course = @courses-current_user.courses
 
     if( @Select_course_type!="" && @Select_exam_type=="" &&@Select_credit=="")
@@ -337,8 +337,8 @@ class CoursesController < ApplicationController
   #-------------------------for both teachers and students----------------------
 
   def index
-    @course=current_user.teaching_courses.paginate(page: params[:page], per_page: 5) if teacher_logged_in?
-    @course=current_user.courses.paginate(page: params[:page], per_page: 5) if student_logged_in?
+    @course=current_user.teaching_courses.paginate(page: params[:page], per_page: 4) if teacher_logged_in?
+    @course=current_user.courses.paginate(page: params[:page], per_page: 4) if student_logged_in?
   end
 
 
