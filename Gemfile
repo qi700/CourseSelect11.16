@@ -54,6 +54,7 @@ gem 'pg', '~> 0.18.4'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
+  gem 'rspec-rails', '3.5.1'
   # Use sqlite3 as the database for Active Record
 end
 
