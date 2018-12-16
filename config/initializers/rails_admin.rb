@@ -1,12 +1,13 @@
 RailsAdmin.config do |config|
 
-  # config.main_app_name = ["Cool app", "BackOffice"]
+
+    # config.main_app_name = ["Cool app", "BackOffice"]
   # or something more dynamic
   config.main_app_name = Proc.new { |controller| ["CourseSelect", "控制面板"] }
 
   # config.authorize_with :cancan, AdminAbility
 
-  config.included_models = ['User','Course','Grade']
+  config.included_models = ['User','Inform','Course','Grade']
 
   # config.model ['Relationship'] do
   #   navigation_label 'Association'
@@ -24,7 +25,6 @@ RailsAdmin.config do |config|
   end
 
   config.current_user_method(&:current_user)
-
   ### Popular gems integration
 
   ## == Devise ==
@@ -41,22 +41,22 @@ RailsAdmin.config do |config|
 
   ## == PaperTrail ==
   # config.audit_with :paper_trail, 'User', 'PaperTrail::Version' # PaperTrail >= 3.0.0
+
   ### More at https://github.com/sferik/rails_admin/wiki/Base-configuration
 
   config.actions do
-    # root actions
     dashboard                     # mandatory
-    # collection actions
     index                         # mandatory
     new
     export
-    history_index
     bulk_delete
-    # member actions
     show
     edit
     delete
-    history_show
-    # show_in_app
+    show_in_app
+
+    ## With an audit adapter, you can add:
+    # history_index
+    # history_show
   end
 end
